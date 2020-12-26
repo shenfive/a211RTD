@@ -50,7 +50,7 @@ class Page2ViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.description as? Page3ViewController
+        let nextVC = segue.destination as? Page3ViewController
         nextVC?.nickName = nickName
         nextVC?.key = keys[selectedID]
         nextVC?.subject = subjects[selectedID]

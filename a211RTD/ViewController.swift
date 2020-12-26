@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var ref:DatabaseReference!
     
+    @IBOutlet weak var nickNameTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -38,6 +39,36 @@ class ViewController: UIViewController {
         
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goPage2":
+            let nextVC = segue.destination as? Page2ViewController
+            nextVC?.nickName = nickNameTF.text ?? ""
+        default:
+            break
+        }
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        let nickName = nickNameTF.text ?? ""
+        if nickName.count < 2{
+            msg(msg: "暱稱必需大於二個字")
+            return
+        }
+        
+        performSegue(withIdentifier: "goPage2", sender: self)
+    }
+    
 }
+extension UIViewController{
+    func msg(msg:String){
+        let alert = UIAlertController(title: "訊息", message: msg, preferredStyle: .alert)
+        //        let okBtn = UIAlertAction(title: "我知道了", style: .default, handler: nil)
+        let okBtn = UIAlertAction(title: "我知道了", style: .default) { (alert) in
+        }
+        alert.addAction(okBtn)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
 

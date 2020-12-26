@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         ref.child("appData").child("name").observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value as? String)
         }
+        ref.child("appData/newData").setValue("我要寫程式")
         
         
         

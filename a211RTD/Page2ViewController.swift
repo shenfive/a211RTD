@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseDatabase
 
-class Page2ViewController: UIViewController,UITableViewDataSource {
+class Page2ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     
 
@@ -16,6 +16,7 @@ class Page2ViewController: UIViewController,UITableViewDataSource {
     var subjects:[String] = []
     var keys:[String] = []
     var ref:DatabaseReference!
+    var selectedID = 0
     
     @IBOutlet weak var subjectTable: UITableView!
     var nickName = ""
@@ -23,6 +24,8 @@ class Page2ViewController: UIViewController,UITableViewDataSource {
         super.viewDidLoad()
         print("page2 NickName:\(nickName)")
         subjectTable.dataSource = self
+        subjectTable.delegate = self
+        
         ref = Database.database().reference(withPath: "appData/subjects")
     }
     
@@ -46,11 +49,20 @@ class Page2ViewController: UIViewController,UITableViewDataSource {
         ref.removeAllObservers()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.description as? Page3ViewController
+        nextVC?.nickName = nickName
+        nextVC?.key = keys[selectedID]
+        nextVC?.subject = subjects[selectedID]
+    }
     
 
     //MARK: tableViewDelegate DataSource
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedID = indexPath.row
+        performSegue(withIdentifier: "goPage3", sender: self)
+    }
     
     
     

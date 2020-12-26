@@ -40,11 +40,11 @@ class Page2ViewController: UIViewController,UITableViewDataSource {
             }
             self.subjectTable.reloadData()
         }
-        
-        
-        
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        ref.removeAllObservers()
+    }
     
     
 

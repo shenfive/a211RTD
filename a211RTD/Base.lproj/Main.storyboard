@@ -80,6 +80,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="6bx-Gw-UBy" secondAttribute="trailing" constant="20" id="v9E-Vx-wUK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="theSubject" destination="6bx-Gw-UBy" id="Kkp-Ju-gly"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,7 +98,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0yg-TS-i2K"/>
                     <connections>
-                        <outlet property="subjectTable" destination="TgK-4g-afO" id="FSh-U0-PoK"/>
+                        <outlet property="subjectTable" destination="TgK-4g-afO" id="xJG-Wl-jm2"/>
                         <segue destination="OwR-6J-hUA" kind="show" identifier="goPage3" id="yKD-Da-bx3"/>
                     </connections>
                 </viewController>

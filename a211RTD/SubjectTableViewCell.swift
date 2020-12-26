@@ -8,7 +8,8 @@
 import UIKit
 
 class SubjectTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var theSubject: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

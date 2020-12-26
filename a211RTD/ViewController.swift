@@ -31,10 +31,12 @@ class ViewController: UIViewController {
         }
 
         
-        ref.child("appData/name").observeSingleEvent(of: .value) { (snapshot) in
+//        ref.child("appData/name").observeSingleEvent(of: .value) { (snapshot) in
+//            self.title = (snapshot.value as? String) ?? "未啟動"
+//        }
+        ref.child("appData/name").observe(.value) { (snapshot) in
             self.title = (snapshot.value as? String) ?? "未啟動"
         }
-        
         
         
     }

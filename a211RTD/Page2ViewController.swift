@@ -7,25 +7,36 @@
 
 import UIKit
 
-class Page2ViewController: UIViewController {
+class Page2ViewController: UIViewController,UITableViewDataSource {
 
     
+
+    
+
+    
+    @IBOutlet weak var subjectTable: UITableView!
     var nickName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         print("page2 NickName:\(nickName)")
-        // Do any additional setup after loading the view.
+        subjectTable.dataSource = self
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: tableViewDelegate DataSource
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell") as! SubjectTableViewCell
+        return cell
+    }
+
 
 }

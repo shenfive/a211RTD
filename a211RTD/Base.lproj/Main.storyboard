@@ -137,13 +137,51 @@
                                 <rect key="frame" x="0.0" y="162" width="414" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pGB-38-ePk">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dcCell" id="pGB-38-ePk" customClass="DCTableViewCell" customModule="a211RTD" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pGB-38-ePk" id="Tjs-Gu-i4I">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPO-6P-NK6">
+                                                    <rect key="frame" x="10" y="10" width="394" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="7Bp-Bf-0ME"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-O5-Bqd">
+                                                    <rect key="frame" x="362" y="39" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-nZ-3xc">
+                                                    <rect key="frame" x="10" y="39" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="XDQ-O5-Bqd" secondAttribute="trailing" constant="10" id="Rqd-om-z2k"/>
+                                                <constraint firstAttribute="trailing" secondItem="XPO-6P-NK6" secondAttribute="trailing" constant="10" id="WQs-58-3xf"/>
+                                                <constraint firstItem="9uf-nZ-3xc" firstAttribute="top" secondItem="XPO-6P-NK6" secondAttribute="bottom" constant="5" id="bgM-Ny-gxJ"/>
+                                                <constraint firstItem="XPO-6P-NK6" firstAttribute="leading" secondItem="Tjs-Gu-i4I" secondAttribute="leading" constant="10" id="eNb-MF-BVc"/>
+                                                <constraint firstItem="XPO-6P-NK6" firstAttribute="top" secondItem="Tjs-Gu-i4I" secondAttribute="top" constant="10" id="k5o-Ie-eeS"/>
+                                                <constraint firstItem="9uf-nZ-3xc" firstAttribute="leading" secondItem="Tjs-Gu-i4I" secondAttribute="leading" constant="10" id="lkc-9J-3qy"/>
+                                                <constraint firstAttribute="bottom" secondItem="9uf-nZ-3xc" secondAttribute="bottom" constant="10" id="wbC-N8-aqg"/>
+                                                <constraint firstAttribute="bottom" secondItem="XDQ-O5-Bqd" secondAttribute="bottom" constant="10" id="wiP-gj-Gyt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="XPO-6P-NK6" id="C3T-Rw-1Ie"/>
+                                            <outlet property="name" destination="9uf-nZ-3xc" id="uk1-Xs-tx9"/>
+                                            <outlet property="time" destination="XDQ-O5-Bqd" id="rhF-RI-Q1a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
